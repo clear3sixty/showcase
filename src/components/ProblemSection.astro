@@ -1,0 +1,53 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<section class="py-16 bg-theme-light px-4"> {/* Section background to theme light */}
+    <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold text-theme-on-light mb-12"> {/* Main heading color */}
+            Struggling To Stand Out Online?
+        </h2>
+        
+        <div class="grid md:grid-cols-3 gap-8 mb-16">
+            {/* Card 1 */}
+            <div class="bg-white p-8 rounded-lg hover:shadow-xl transition border border-gray-200 value-card"> {/* Card background to white, subtle border, use value-card for hover */}
+                <div class="bg-theme-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"> {/* Icon bg: primary with opacity */}
+                    <Icon name="tabler:search" class="text-theme-primary w-8 h-8" /> {/* Icon color: primary */}
+                </div>
+                <h3 class="text-xl font-bold text-theme-on-light mb-3">Can't Be Found Online</h3> {/* Card heading color */}
+                <p class="text-theme-muted"> {/* Card paragraph color */}
+                    Your business doesn't show up when customers search for your services. Potential customers go to your competitors instead.
+                </p>
+            </div>
+            
+            {/* Card 2 */}
+            <div class="bg-white p-8 rounded-lg hover:shadow-xl transition border border-gray-200 value-card">
+                <div class="bg-theme-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Icon name="tabler:devices-pc" class="text-theme-primary w-8 h-8" />
+                </div>
+                <h3 class="text-xl font-bold text-theme-on-light mb-3">Outdated Website</h3>
+                <p class="text-theme-muted">
+                    Your current website doesn't represent your business well or convert visitors into paying customers.
+                </p>
+            </div>
+            
+            {/* Card 3 */}
+            <div class="bg-white p-8 rounded-lg hover:shadow-xl transition border border-gray-200 value-card">
+                <div class="bg-theme-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Icon name="tabler:clock" class="text-theme-primary w-8 h-8" />
+                </div>
+                <h3 class="text-xl font-bold text-theme-on-light mb-3">Wasting Time & Money</h3>
+                <p class="text-theme-muted">
+                    You've tried digital marketing before but didn't see results. It feels complex and expensive without clear returns.
+                </p>
+            </div>
+        </div>
+        
+        <a 
+            href="/contact" 
+            class="btn-theme-primary inline-block px-8 py-4 font-bold transition shadow-lg transform hover:scale-105" /* Use theme button class, adjust padding if needed */
+        >
+            Let Us Solve These Problems For You
+        </a>
+    </div>
+</section>

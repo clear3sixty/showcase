@@ -1,0 +1,48 @@
+---
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components'; 
+import heroImage from '../assets/about-us.png'; 
+
+const phoneNumber = "+256759311117"; // Your WhatsApp number
+const whatsappLink = `https://wa.me/${phoneNumber.replace('+', '')}?text=${encodeURIComponent("Hello Clear3sixty, I'm interested in your services.")}`;
+---
+
+<section class="hero-gradient text-theme-on-dark relative overflow-hidden min-h-[55vh] flex items-center py-12 md:py-16 lg:py-20">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center relative z-10">
+        <!-- Text Content -->
+        <div class="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0">
+
+            <h1 class="text-4xl sm:text-5xl xl:text-6xl font-bold mb-6 leading-tight tracking-tight">
+                Elevate Your <span class="text-theme-accent">Digital Presence</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-theme-on-dark/80 mb-10 max-w-xl mx-auto lg:mx-0">
+                We craft stunning websites, boost your online visibility, and develop custom solutions to help your business thrive.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mt-10"> 
+ 
+                <a
+                    href={whatsappLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center justify-center px-8 py-3.5 bg-green-500 hover:bg-green-600 text-white font-bold rounded-full text-lg transition-all duration-200 ease-in-out shadow-lg hover:shadow-xl transform hover:scale-105"
+                >
+                    <Icon name="tabler:brand-whatsapp" class="w-5 h-5 mr-2" /> Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <!-- Image Content -->
+        <div class="lg:w-1/2 flex justify-center lg:justify-end items-center lg:pl-12">
+            <Image 
+                src={heroImage} 
+                alt="Digital solutions for businesses by Clear3sixty" 
+                class="w-full max-w-md lg:max-w-lg xl:max-w-xl rounded-xl shadow-2xl" 
+                widths={[400, 600, 800, 1000]}
+                sizes="(max-width: 1023px) 448px, (max-width: 1279px) 512px, 576px"
+                format="webp"
+                loading="eager" />
+        </div>
+    </div>
+    
+</section>

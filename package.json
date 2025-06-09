@@ -1,0 +1,22 @@
+{
+  "name": "showase",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@iconify-json/tabler": "^1.2.19",
+    "@lucide/astro": "^0.513.0",
+    "@tailwindcss/vite": "^4.1.8",
+    "astro": "^5.9.0",
+    "astro-icon": "^1.1.5",
+    "tailwindcss": "^4.1.8"
+  }
+}

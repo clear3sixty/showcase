@@ -1,0 +1,76 @@
+---
+// src/components/TestimonialsSection.astro
+import { Icon } from "astro-icon/components"; // Changed import
+import { Image } from "astro:assets";
+
+// Placeholder data - replace with your actual testimonials and image paths
+// Import avatar images from src/assets for optimization
+import avatarSarah from "../assets/avatars/woman-3.png"; // Assuming this is the correct path
+import avatarDavid from "../assets/avatars/woman-old-1.png"; // Assuming this is the correct path
+import avatarAmina from "../assets/avatars/man-4.png"; // Assuming this is the correct path
+
+const testimonials = [
+    {
+        stars: 4,
+        quote: "This service transformed our small bakery into a recognized brand. Our website brings in twice as many customers, and the online visibility has been incredible.",
+        authorName: "Sarah K.",
+        authorTitle: "Local Bakery Owner",
+        avatarSrc: avatarSarah, 
+        avatarAlt: "Sarah K.",
+    },
+    {
+        stars: 5,
+        quote: "After years of struggling with digital marketing, they made it simple. We now get over 50 inquiries a month from our new website and online presence.",
+        authorName: "David M.",
+        authorTitle: "Auto Services Manager",
+        avatarSrc: avatarDavid,
+        avatarAlt: "Nalukwago M.",
+    },
+    {
+        stars: 3,
+        quote: "The custom app they developed for our clinic has reduced paperwork by 80% and improved patient satisfaction. Their tailored approach made all the difference.",
+        authorName: "Dr. Amina N.",
+        authorTitle: "Healthcare Center Director",
+        avatarSrc: avatarAmina,
+        avatarAlt: "Dr. Amina N.",
+    }
+];
+---
+
+<section class="py-16 hero-gradient text-theme-on-dark px-4"> {/* Section bg to hero-gradient, text to theme-on-dark */}
+    <div class="container mx-auto">
+        <div class="text-center mb-16">
+            <span class="font-bold text-theme-on-dark opacity-80">SATISFIED CLIENTS</span> {/* Ensure span uses theme text */}
+            <h2 class="text-3xl font-bold text-theme-on-dark mt-2">What Our Clients Say</h2> {/* Ensure heading uses theme text */}
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {testimonials.map(testimonial => (
+                <div class="bg-[var(--clr-secondary)]/10 backdrop-blur-lg p-8 rounded-xl border border-[var(--clr-secondary)]/20 shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 duration-300 flex flex-col"> {/* Card bg tinted with secondary, border with secondary */}
+                    <div class="flex mb-4">
+                        {Array(testimonial.stars).fill(0).map((_, i) => (
+                            <Icon name="tabler:star-filled" class="text-theme-accent w-5 h-5" /> /* Replaced Star, size w-5 h-5 is 20px, added -filled for solid star */
+                        ))}
+                    </div>
+                    <p class="italic mb-6 text-theme-on-dark flex-grow">"{testimonial.quote}"</p> {/* Quote text to theme-on-dark */}
+                    <div class="flex items-center mt-auto">
+                        <div class="relative">
+                            <Image 
+                                src={testimonial.avatarSrc} 
+                                alt={testimonial.avatarAlt}
+                                width={48} 
+                                height={48}
+                                format="webp"
+                                class="w-12 h-12 rounded-full mr-4 border-2 border-theme-accent shadow object-cover" 
+                            />
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-theme-on-dark">{testimonial.authorName}</h4> {/* Author name to theme-on-dark */}
+                            <p class="text-theme-on-dark opacity-80 text-sm">{testimonial.authorTitle}</p> {/* Author title to theme-on-dark with opacity */}
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>

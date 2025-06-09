@@ -1,0 +1,144 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Icon } from 'astro-icon/components';
+
+const services = [
+    {
+        id: "web-design",
+        iconName: "tabler:device-laptop",
+        title: "Professional Website Design & Development",
+        description: "Your online storefront is your most powerful asset. We build stunning, functional websites that attract customers and work for your business, 24/7.",
+        details: "Is your current website outdated, hard to update, or even non-existent? We specialize in creating modern, mobile-friendly websites that make a fantastic first impression and convert visitors into valuable clients.",
+        whatYouGet: [
+            "Custom-Designed Websites: Unique, professional designs that truly reflect your brand.",
+            "Mobile-Responsive Design: Perfect functionality on any device – smartphones, tablets, or computers.",
+            "Easy Content Management: Simple for you to update, or we can manage it for you.",
+            "Secure & Reliable Hosting: Peace of mind knowing your website is secure, fast, and always online.",
+            "E-commerce & Booking Functionality: Online shops, booking systems, and payment gateways."
+        ],
+        benefit: "Stop losing customers due to an unprofessional or invisible online presence. Get a powerful website that truly works for your business."
+    },
+    {
+        id: "seo",
+        iconName: "tabler:search",
+        title: "Strategic Search Engine Optimization (SEO)",
+        description: "Get Found on Google! We help local customers find your business when they search for what you offer, turning online searches into real-world visits.",
+        details: "It's not enough to have a great website; people need to find it! If your business isn't showing up on Google, your competitors are likely scooping up your potential customers. We specialize in local SEO strategies that put your business in front of the right people at the right time.",
+        whatYouGet: [
+            "Higher Google Rankings: Optimized to rank higher for relevant local keywords.",
+            "Increased Website Traffic: More organic visitors means more leads, calls, and sales.",
+            "Google My Business Optimization: Attract customers in your immediate area via Google Maps.",
+            "Keyword Research & Content Strategy: Content that answers what your potential customers are searching for.",
+            "Competitor Analysis: Strategies to outrank your rivals online."
+        ],
+        benefit: "Stop being invisible in search results. Start getting discovered by more local customers who are actively looking for your services."
+    },
+    {
+        id: "custom-apps",
+        iconName: "tabler:device-mobile",
+        title: "Custom App Development",
+        description: "Streamline your operations or enhance customer engagement with a custom application built just for your unique needs.",
+        details: "Are manual processes slowing you down? Do you have a unique idea to serve your customers better? Off-the-shelf software often falls short. We can design and build tailored applications that automate tasks, improve efficiency, or offer a unique service to your clients.",
+        whatYouGet: [
+            "Tailored Solutions: Apps built specifically to solve your unique business challenges.",
+            "Efficiency & Automation: Automate repetitive tasks, manage inventory, or streamline internal workflows.",
+            "Enhanced Customer Engagement: Loyalty programs, easy booking apps, or communication platforms.",
+            "Seamless Integration: Your custom app works smoothly with your existing systems and website.",
+            "User-Friendly Design: Intuitive and easy-to-use apps for both your team and your customers."
+        ],
+        benefit: "Solve specific operational headaches or offer a unique service that sets you apart. Custom apps save you time and provide a competitive edge."
+    },
+    {
+        id: "branding",
+        iconName: "tabler:palette",
+        title: "Brand Identity & Strategy",
+        description: "Craft a memorable and professional brand that instills trust, attracts your ideal clients, and truly tells your unique story.",
+        details: "Your brand is more than just a logo; it's the feeling people get when they interact with your business. An outdated or inconsistent brand can send the wrong message. We help you define and express a clear, professional brand identity that resonates with your audience and differentiates you from the competition.",
+        whatYouGet: [
+            "Logo Design: A distinctive, modern logo that captures the essence of your business.",
+            "Brand Guidelines: Consistent color palettes, fonts, and imagery for a professional look.",
+            "Brand Messaging: Crafting a clear, compelling message that tells your story and value.",
+            "Visual Branding: A cohesive look and feel across all digital and physical touchpoints."
+        ],
+        benefit: "Project a professional, trustworthy image that attracts your ideal clients and builds lasting recognition in your community."
+    }
+];
+---
+
+<Layout title="Our Services - Clear3sixty | Complete Digital Solutions Worldwide" currentPage="services">
+    <!-- Page Header Section -->
+    <section class="py-20 md:py-28 hero-gradient text-theme-on-dark"> {/* Use theme text color */}
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 text-theme-on-dark">Our Services: Your Complete Digital Solution</h1> {/* Explicit theme text */}
+            <p class="text-lg md:text-xl max-w-3xl mx-auto text-theme-on-dark opacity-90"> {/* Explicit theme text */}
+                At Clear3sixty, we offer a comprehensive suite of digital services designed to take the burden off your shoulders and deliver real results. We handle the tech, so you can focus on what you do best.
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Sections -->
+    {services.map((service, index) => (
+        <section id={service.id} class={`py-16 md:py-20 ${index % 2 === 0 ? 'bg-white' : 'bg-theme-light'}`}> {/* Alternating backgrounds */}
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-12">
+                        <div class="inline-block p-4 bg-theme-primary/10 rounded-full mb-4"> {/* Icon circle bg to theme primary with opacity */}
+                            <Icon name={service.iconName} class="w-10 h-10 text-theme-primary" /> {/* Icon color to theme primary */}
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-theme-on-light mb-3">{service.title}</h2> {/* Heading color */}
+                        <p class="text-lg text-theme-muted">{service.description}</p> {/* Paragraph to theme muted */}
+                    </div>
+
+                    <div class="bg-white shadow-xl rounded-lg p-8 md:p-10">
+                        <p class="text-theme-muted mb-8 text-lg">{service.details}</p> {/* Details paragraph to theme muted */}
+                        
+                        <h3 class="text-2xl font-semibold text-theme-on-light mb-4">What you get:</h3> {/* Sub-heading color */}
+                        <ul class="space-y-3 mb-8">
+                            {service.whatYouGet.map(item => (
+                                <li class="flex items-start">
+                                    <Icon name="tabler:circle-check" class="w-6 h-6 text-theme-secondary mr-3 mt-1 flex-shrink-0" /> {/* Checkmark icon to theme secondary */}
+                                    <span class="text-theme-muted">{item}</span> {/* List item text to theme muted */}
+                                </li>
+                            ))}
+                        </ul>
+
+                        <div class="bg-theme-accent/10 border-l-4 border-theme-accent p-6 rounded-md"> {/* Benefit box bg to theme accent with opacity, border to theme accent */}
+                            <h4 class="text-xl font-semibold text-theme-accent mb-2">Benefit to you:</h4> {/* Benefit heading to theme accent */}
+                            <p class="text-theme-on-light text-lg"><strong>{service.benefit}</strong></p> {/* Benefit text to theme on light for contrast */}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    ))}
+
+    <!-- Final CTA Section -->
+    <section id="cta-services" class="py-20 hero-gradient text-theme-on-dark"> {/* Section bg to hero-gradient, text to theme-on-dark */}
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-theme-on-dark">Ready to Elevate Your Digital Presence?</h2> {/* Heading color */}
+            <p class="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-theme-on-dark opacity-90"> {/* Paragraph color */}
+                Whether you need a new website, higher search rankings, a custom app, or a complete brand overhaul, Clear3sixty is here to help. Let's discuss your unique needs and how we can bring your digital vision to life.
+            </p>
+            <a 
+                href="/contact" 
+                class="inline-flex items-center justify-center px-10 py-4 bg-theme-accent text-theme-on-light font-bold rounded-full text-lg transition shadow-lg transform hover:scale-105 hover:brightness-90" 
+            >
+                <Icon name="tabler:calendar-event" class="w-6 h-6 mr-2" /> Get a Free Consultation
+            </a>
+
+            <div class="mt-16 pt-10 border-t max-w-lg mx-auto" style="border-color: rgba(var(--rgb-secondary), 0.3);"> {/* Border color using theme secondary with opacity */}
+                <h3 class="text-xl font-semibold mb-6 text-theme-on-dark opacity-80">Have a question about a specific service?</h3> {/* Heading color */}
+                <div class="space-y-4">
+                    <a href="tel:+256759311117" class="flex items-center justify-center text-lg text-theme-on-dark opacity-80 hover:text-theme-secondary hover:opacity-100 transition"> {/* Link colors */}
+                        <Icon name="tabler:phone" class="w-5 h-5 mr-2 text-theme-secondary" /> Call Us: +256 759 311 117 {/* Icon color */}
+                    </a>
+                    <a href="mailto:clear3sixty@gmail.com" class="flex items-center justify-center text-lg text-theme-on-dark opacity-80 hover:text-theme-secondary hover:opacity-100 transition">
+                        <Icon name="tabler:mail" class="w-5 h-5 mr-2 text-theme-secondary" /> Email Us: clear3sixty@gmail.com
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+</Layout>

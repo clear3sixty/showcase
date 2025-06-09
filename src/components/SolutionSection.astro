@@ -1,0 +1,60 @@
+---
+// src/components/SolutionSection.astro
+import { Icon } from 'astro-icon/components';
+
+const solutions = [
+    {
+        id: "web-design",
+        iconName: "tabler:world",
+        title: "Professional Website",
+        description: "Fast, beautiful websites that showcase your organization and convert visitors effectively."
+    },
+    {
+        id: "seo",
+        iconName: "tabler:search",
+        title: "Online Visibility",
+        description: "Get found first when your target audience searches for your services or information."
+    },
+    {
+        id: "branding",
+        iconName: "tabler:palette",
+        title: "Brand Identity",
+        description: "A professional logo and visual identity that makes your organization stand out."
+    },
+    {
+        id: "custom-apps",
+        iconName: "tabler:device-mobile",
+        title: "Custom Solutions",
+        description: "Tailored apps or tools to streamline your operations, engagement, or service delivery."
+    }
+];
+---
+
+<section id="services" class="py-16 bg-theme-light px-4"> {/* Section background to theme light */}
+    <div class="container mx-auto">
+        <div class="text-center mb-16">
+            <span class="text-theme-primary font-bold uppercase">OUR SOLUTION</span> {/* "OUR SOLUTION" text to primary color */}
+            <h2 class="text-3xl font-bold text-theme-on-light mt-2">Complete Digital Solutions</h2> {/* Main heading color */}
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {solutions.map(solution => (
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition text-center flex flex-col value-card"> {/* Card background to white, add value-card hover */}
+                    <div class="relative w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg bg-theme-primary"> {/* Icon circle to solid theme primary color */}
+                        <Icon name={solution.iconName} class="text-theme-on-dark w-9 h-9" /> {/* Icon color to contrast with gradient */}
+                    </div>
+                    <h3 class="text-xl font-bold text-theme-on-light mb-4">{solution.title}</h3> {/* Card heading color */}
+                    <p class="text-theme-muted mb-6 flex-grow"> {/* Card paragraph color */}
+                        {solution.description}
+                    </p>
+                    <a 
+                        href={`/services#${solution.id}`} 
+                        class="inline-block mt-auto px-5 py-2 bg-theme-secondary/10 text-theme-secondary font-semibold text-sm rounded-lg hover:bg-theme-secondary/20 transition duration-150 ease-in-out group" 
+                    >
+                        Learn more <Icon name="tabler:arrow-right" class="inline-block w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-1 text-theme-secondary" /> {/* Arrow icon color */}
+                    </a>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>

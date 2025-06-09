@@ -1,0 +1,226 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+
+// Import your local images
+import heroAboutImage from '../assets/about-us.png'; // Update path if image is in a subfolder of assets
+import storyTeamDiscussionImage from '../assets/hero.png'; // Update path
+---
+
+<Layout title="About Us - Clear3sixty | Your Global Digital Partner" currentPage="about">
+    <!-- Hero Section -->
+    <section class="hero-gradient text-theme-on-dark"> {/* Use theme text color */}
+        <div class="container mx-auto px-4 py-20 md:py-28 text-center"> {/* Centered text for hero */}
+            <div class="md:w-3/4 lg:w-2/3 mx-auto md:mx-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 text-theme-on-dark">Your Dedicated Digital Partner</h1> {/* Explicit theme text */}
+                <p class="text-lg md:text-xl mb-8 text-theme-on-dark opacity-90">We make powerful digital tools accessible for every venture, so you can focus on what you do best.</p> {/* Explicit theme text */}
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="py-16 bg-theme-light"> {/* Section bg to theme light */}
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-theme-on-light">Our Story</h2> {/* Heading color */}
+                <div class="w-24 h-1 bg-theme-primary mx-auto mb-6"></div> {/* Divider to theme primary */}
+                <p class="text-theme-muted max-w-3xl mx-auto text-lg">Born from a need, built for your growth</p> {/* Sub-heading to theme muted */}
+            </div>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <Image 
+                        src={storyTeamDiscussionImage}
+                        alt="Team discussing Clear3sixty's mission" 
+                        class="rounded-xl shadow-lg w-full"
+                        widths={[400, 800]}
+                        sizes="(max-width: 768px) 100vw, 800px"
+                        format="webp" />
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <p class="text-lg mb-6 text-theme-muted">At Clear3sixty, we saw a common struggle faced by countless businesses, non-profits, and organizations. You're passionate about what you do, but the digital world often feels confusing, expensive, and time-consuming.</p> {/* Paragraph to theme muted */}
+                    <p class="text-lg mb-6 text-theme-muted">We started with a clear mission: <span class="font-semibold text-theme-primary">to demystify digital marketing and make powerful online tools accessible for every venture.</span> We believe every organization deserves a professional online presence that truly reflects its value.</p> {/* Highlighted text to theme primary */}
+                    <div class="flex items-center mt-8">
+                        <div class="mr-4 text-theme-primary"> {/* Icon color to theme primary */}
+                            <Icon name="tabler:target" class="w-10 h-10" /> 
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-1 text-theme-on-light">Our Mission</h3> {/* Heading color */}
+                            <p class="text-theme-muted">Empower organizations globally with accessible, effective digital solutions.</p> {/* Paragraph to theme muted */}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Vision Section -->
+    <section class="py-16 bg-white"> {/* Section bg to white for contrast */}
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-theme-on-light">Our Vision</h2> {/* Heading color */}
+                <div class="w-24 h-1 bg-theme-primary mx-auto mb-6"></div> {/* Divider to theme primary */}
+                <p class="text-theme-muted max-w-3xl mx-auto text-lg">Empowering organizations worldwide, one digital success at a time</p> {/* Sub-heading to theme muted */}
+            </div>
+            <div class="max-w-4xl mx-auto bg-theme-light rounded-xl shadow-md overflow-hidden p-8"> {/* Card bg to theme light */}
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-2/3 p-6">
+                        <p class="text-lg text-theme-muted mb-6">Our vision extends beyond just building websites. We envision a thriving landscape of businesses and organizations, each empowered by a strong digital footprint.</p> {/* Paragraph to theme muted */}
+                        <p class="text-lg text-theme-muted mb-6">We strive to be the trusted partner that helps you navigate the complexities of the online world, ensuring your efforts translate into tangible growth and increased visibility in your community.</p> {/* Paragraph to theme muted */}
+                    </div>
+                    <div class="md:w-1/3 flex items-center justify-center p-6 bg-theme-accent/20"> {/* Icon bg to theme accent with opacity */}
+                        <Icon name="tabler:bulb" class="w-20 h-20 text-theme-accent opacity-70" /> {/* Icon color to theme accent */}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Values Section -->
+    <section class="py-16 bg-theme-light"> {/* Section bg to theme light */}
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-theme-on-light">Our Values</h2> {/* Heading color */}
+                <div class="w-24 h-1 bg-theme-primary mx-auto mb-6"></div> {/* Divider to theme primary */}
+                <p class="text-theme-muted max-w-3xl mx-auto text-lg">Simple principles that drive powerful results for you</p> {/* Sub-heading to theme muted */}
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="value-card bg-white rounded-xl shadow-md overflow-hidden p-6 transition duration-300"> {/* Card bg to white for contrast */}
+                    <div class="text-theme-primary mb-4"><Icon name="tabler:message-dots" class="w-10 h-10" /></div> {/* Icon color to theme primary */}
+                    <h3 class="text-xl font-bold mb-3 text-theme-on-light">Simplicity</h3> {/* Heading color */}
+                    <p class="text-theme-muted">We cut through the jargon. We explain complex digital concepts in plain, understandable language so you can make informed decisions.</p> {/* Paragraph to theme muted */}
+                </div>
+                <div class="value-card bg-white rounded-xl shadow-md overflow-hidden p-6 transition duration-300">
+                    <div class="text-theme-primary mb-4"><Icon name="tabler:heart-handshake" class="w-10 h-10" /></div>
+                    <h3 class="text-xl font-bold mb-3 text-theme-on-light">Partnership</h3>
+                    <p class="text-theme-muted">We see ourselves as an extension of your team. Your success is our success, and we're committed to building long-term relationships.</p>
+                </div>
+                <div class="value-card bg-white rounded-xl shadow-md overflow-hidden p-6 transition duration-300">
+                    <div class="text-theme-primary mb-4"><Icon name="tabler:search" class="w-10 h-10" /></div>
+                    <h3 class="text-xl font-bold mb-3 text-theme-on-light">Transparency</h3>
+                    <p class="text-theme-muted">No hidden fees, no smoke and mirrors. You'll always know what we're doing, why we're doing it, and what results to expect.</p>
+                </div>
+                <div class="value-card bg-white rounded-xl shadow-md overflow-hidden p-6 transition duration-300">
+                    <div class="text-theme-primary mb-4"><Icon name="tabler:map-pin" class="w-10 h-10" /></div>
+                    <h3 class="text-xl font-bold mb-3 text-theme-on-light">Local Focus</h3>
+                    <p class="text-theme-muted">We understand the unique dynamics of various markets. Our strategies are tailored to work effectively in your specific context.</p>
+                </div>
+                <div class="value-card bg-white rounded-xl shadow-md overflow-hidden p-6 transition duration-300">
+                    <div class="text-theme-primary mb-4"><Icon name="tabler:trending-up" class="w-10 h-10" /></div>
+                    <h3 class="text-xl font-bold mb-3 text-theme-on-light">Results-Driven</h3>
+                    <p class="text-theme-muted">We're not just about pretty designs; we're about getting you more customers, more visibility, and measurable growth for your business.</p>
+                </div>
+                <div class="value-card bg-white rounded-xl shadow-md overflow-hidden p-6 transition duration-300">
+                    <div class="text-theme-primary mb-4"><Icon name="tabler:heart" class="w-10 h-10" /></div>
+                    <h3 class="text-xl font-bold mb-3 text-theme-on-light">Commitment</h3>
+                    <p class="text-theme-muted">We're with you every step of the way. From initial strategy to ongoing support, we're dedicated to your long-term digital success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-16 bg-white"> {/* Section bg to white for contrast */}
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-theme-on-light">Why Choose Clear3sixty?</h2> {/* Heading color */}
+                <div class="w-24 h-1 bg-theme-primary mx-auto mb-6"></div> {/* Divider to theme primary */}
+                <p class="text-theme-muted max-w-3xl mx-auto text-lg">We combine market insights with global expertise</p> {/* Sub-heading to theme muted */}
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <div class="flex items-start mb-6">
+                        <div class="mr-4 text-theme-secondary mt-1"><Icon name="tabler:circle-check" class="w-6 h-6" /></div> {/* Icon color to theme secondary */}
+                        <div>
+                            <h3 class="text-xl font-bold mb-2 text-theme-on-light">Market Experts</h3> {/* Heading color */}
+                            <p class="text-theme-muted">Our strategies are designed considering market nuances, consumer behaviors, and competition to best serve your business.</p> {/* Paragraph to theme muted */}
+                        </div>
+                    </div>
+                    <div class="flex items-start mb-6">
+                        <div class="mr-4 text-theme-secondary mt-1"><Icon name="tabler:circle-check" class="w-6 h-6" /></div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2 text-theme-on-light">Proven Methodology</h3>
+                            <p class="text-theme-muted">We've helped over 200 local businesses and organizations establish and grow their digital presence with our structured approach.</p>
+                            <p class="text-theme-muted">We've helped numerous businesses and organizations establish and grow their digital presence with our structured approach.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="mr-4 text-theme-secondary mt-1"><Icon name="tabler:circle-check" class="w-6 h-6" /></div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2 text-theme-on-light">Holistic Solutions</h3>
+                            <p class="text-theme-muted">We don't just build websites - we create complete digital solutions that include branding, content, SEO, and marketing strategy.</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex items-start mb-6">
+                        <div class="mr-4 text-theme-secondary mt-1"><Icon name="tabler:circle-check" class="w-6 h-6" /></div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2 text-theme-on-light">Mobile-First Approach</h3>
+                            <p class="text-theme-muted">With a majority of users accessing the internet via mobile, we prioritize mobile-optimized designs that work perfectly on all devices.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start mb-6">
+                        <div class="mr-4 text-theme-secondary mt-1"><Icon name="tabler:circle-check" class="w-6 h-6" /></div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2 text-theme-on-light">Affordable Pricing</h3>
+                            <p class="text-theme-muted">We offer flexible pricing packages designed to fit Ugandan business budgets without compromising on quality.</p>
+                            <p class="text-theme-muted">We offer flexible pricing packages designed to fit various business budgets without compromising on quality.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="mr-4 text-theme-secondary mt-1"><Icon name="tabler:circle-check" class="w-6 h-6" /></div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2 text-theme-on-light">Ongoing Support</h3>
+                            <p class="text-theme-muted">We don't disappear after launch. We provide training, maintenance, and regular updates to keep your digital presence current.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 bg-theme-accent/20 rounded-xl p-8 flex flex-col md:flex-row items-center"> {/* Callout box bg to theme accent with opacity */}
+                <div class="md:w-2/3 mb-6 md:mb-0">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 text-theme-on-light">95% of our clients see measurable growth within 3 months</h3> {/* Heading color */}
+                    <p class="text-theme-muted">Join the many businesses that have transformed their digital presence with Clear3sixty.</p> {/* Paragraph to theme muted */}
+                </div>
+                <div class="md:w-1/3 text-center md:text-right">
+                    <a href="#contact" class="btn-theme-primary inline-block py-3 px-8 font-semibold transition duration-300">Get Started</a> {/* Button to theme primary */}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section id="contact" class="py-16 hero-gradient text-theme-on-dark"> {/* Section bg to hero-gradient, text to theme-on-dark */}
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-theme-on-dark">Ready to Make Your Digital Dreams a Reality?</h2> {/* Heading color */}
+                <p class="text-lg text-theme-on-dark opacity-90 mb-8">We'd love to learn about your unique business and how we can help you achieve your online goals.</p> {/* Paragraph color */}
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="/contact" class="bg-theme-light text-theme-on-light py-3 px-6 rounded-lg font-medium hover:bg-white transition duration-300 inline-flex items-center justify-center"> {/* Button 1 styling */}
+                        <Icon name="tabler:calendar-event" class="w-5 h-5 mr-2" /> Schedule Consultation
+                    </a>
+                    <a href="mailto:hello@Clear3sixty.com" class="btn-theme-primary py-3 px-6 font-medium transition duration-300 inline-flex items-center justify-center"> {/* Button 2 to theme primary */}
+                        <Icon name="tabler:mail" class="w-5 h-5 mr-2" /> Email Us
+                    </a>
+                </div>
+                <div class="mt-12 pt-8 border-t" style="border-color: rgba(var(--rgb-secondary), 0.3);"> {/* Border color using theme secondary with opacity */}
+                    <h3 class="text-xl font-bold mb-4 text-theme-on-dark">You can also reach us directly:</h3> {/* Heading color */}
+                    <div class="flex flex-col sm:flex-row justify-center gap-6">
+                        <div class="flex items-center">
+                            <Icon name="tabler:phone" class="w-5 h-5 text-theme-secondary mr-3" /> {/* Icon color to theme secondary */}
+                            <span class="text-theme-on-dark opacity-90">+256 700 123 456</span> {/* Text color */}
+                        </div>
+                        <div class="flex items-center">
+                            <Icon name="tabler:mail" class="w-5 h-5 text-theme-secondary mr-3" />
+                            <span class="text-theme-on-dark opacity-90">hello@Clear3sixty.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <Icon name="tabler:map-pin" class="w-5 h-5 text-theme-secondary mr-3" />
+                            <span class="text-theme-on-dark opacity-90">Global Operations</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</Layout>

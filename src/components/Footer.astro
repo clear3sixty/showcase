@@ -1,0 +1,84 @@
+---
+// Image component and defaultSiteLogo import removed
+import { Icon } from 'astro-icon/components'; // Import astro-icon
+import Socials from './Socials.astro'; // Import the Socials component
+
+ // Lucide imports removed, will use astro-icon
+
+export interface Props {
+  // logoSrc prop removed
+  logoAlt?: string;
+  brandName?: string;
+}
+
+const { logoAlt = "Clear3sixty Logo", brandName = "Clear3sixty" } = Astro.props;
+
+---
+<footer class="pt-16 pb-8 px-4 text-theme-on-dark hero-gradient"> {/* Use hero-gradient for background and theme text color */}
+    <div class="container mx-auto">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            <div>
+                <a href="/" class="flex items-center space-x-2 mb-4">
+                    <Icon name="local:logo" class="h-8 w-auto" /> {/* Use astro-icon for the logo */}
+                    <span class="text-2xl font-bold text-theme-on-dark">{brandName}</span>
+                </a>
+                <p class="text-theme-on-dark opacity-80 mb-6">Digital solutions that help businesses attract more customers and grow online.</p>
+                <Socials 
+                    iconSizeClass="w-7 h-7" 
+                    iconColorClass="text-theme-secondary hover:text-theme-accent"
+                    containerClass="flex space-x-4" 
+                />
+            </div>
+            
+            <div>
+                <h4 class="text-lg font-bold mb-4 text-theme-on-dark">Services</h4>
+                <ul class="space-y-3">
+                    <li><a href="/services#web-design" class="text-theme-on-dark opacity-80 hover:opacity-100 hover:text-theme-secondary transition">Website Development</a></li>
+                    <li><a href="/services#seo" class="text-theme-on-dark opacity-80 hover:opacity-100 hover:text-theme-secondary transition">Google Visibility & SEO</a></li>
+                    <li><a href="/services#branding" class="text-theme-on-dark opacity-80 hover:opacity-100 hover:text-theme-secondary transition">Branding & Logo Design</a></li>
+                    <li><a href="/services#custom-apps" class="text-theme-on-dark opacity-80 hover:opacity-100 hover:text-theme-secondary transition">Business Apps</a></li>
+                    <li><a href="/services" class="text-theme-on-dark opacity-80 hover:opacity-100 hover:text-theme-secondary transition">Digital Marketing</a></li> {/* This service ID is not in services.astro, linking to services page for now */}
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="text-lg font-bold mb-4 text-theme-on-dark">Company</h4>
+                <ul class="space-y-3">
+                    <li><a href="/#about" class="text-theme-on-dark opacity-80 hover:opacity-100 hover:text-theme-secondary transition">About Us</a></li>
+                    <li><a href="/#portfolio" class="text-theme-on-dark opacity-80 hover:opacity-100 hover:text-theme-secondary transition">Portfolio</a></li>
+                    <li><a href="/#testimonials" class="text-theme-on-dark opacity-80 hover:opacity-100 hover:text-theme-secondary transition">Testimonials</a></li>
+                    <li><a href="#" class="text-theme-on-dark opacity-80 hover:opacity-100 hover:text-theme-secondary transition">Blog</a></li>
+                    <li><a href="/#contact" class="text-theme-on-dark opacity-80 hover:opacity-100 hover:text-theme-secondary transition">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="text-lg font-bold mb-4 text-theme-on-dark">Contact Us</h4>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <Icon name="tabler:map-pin" class="mt-1 mr-3 text-theme-secondary hover:text-theme-accent w-7 h-7 flex-shrink-0" />
+                        <span class="text-theme-on-dark opacity-80">Kampala, Uganda</span>
+                    </li>
+                    <li class="flex items-center">
+                        <Icon name="tabler:phone" class="mr-3 text-theme-secondary hover:text-theme-accent w-7 h-7 flex-shrink-0" />
+                        <a href="tel:+256759311117" class="text-theme-on-dark opacity-80 hover:opacity-100 hover:text-theme-secondary transition">+256 759 311 117</a>
+                    </li>
+                    <li class="flex items-center">
+                        <Icon name="tabler:mail" class="mr-3 text-theme-secondary hover:text-theme-accent w-7 h-7 flex-shrink-0" />
+                        <a href="mailto:Clear3sixty@gmail.com" class="text-theme-on-dark opacity-80 hover:opacity-100 hover:text-theme-secondary transition">clear3sixty@gmail.com</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="pt-8 border-t" style="border-color: rgba(var(--rgb-secondary), 0.3);"> {/* Use secondary color with opacity for border */}
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-theme-on-dark opacity-70 mb-4 md:mb-0">© {new Date().getFullYear()} {brandName}. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-theme-on-dark opacity-70 hover:opacity-100 hover:text-theme-secondary transition">Privacy Policy</a>
+                    <a href="#" class="text-theme-on-dark opacity-70 hover:opacity-100 hover:text-theme-secondary transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

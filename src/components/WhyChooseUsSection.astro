@@ -1,0 +1,64 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const reasons = [
+    {
+        iconName: "tabler:users",
+        title: "Local Market Experts",
+        description: "Our strategies are specifically designed for the business environment, considering cultural nuances and local competition."
+    },
+    {
+        iconName: "tabler:bolt",
+        title: "Proven Methodology & Results",
+        description: "We've helped numerous businesses establish and grow their digital presence with our structured, results-driven approach."
+    },
+    {
+        iconName: "tabler:award",
+        title: "Holistic & Value-Driven Solutions",
+        description: "From websites to SEO and branding, we offer complete digital solutions tailored to your business budget without compromising quality."
+    }
+];
+---
+
+<section id="why-choose-us" class="py-16 md:py-20 bg-white"> {/* Keep bg-white for contrast with page's bg-theme-light */}
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <span class="text-theme-primary font-bold uppercase">Why Choose Us</span> {/* Span to theme primary */}
+            <h2 class="text-3xl md:text-4xl font-bold text-theme-on-light mt-2">Your Trusted Partner for Digital Growth</h2> {/* Heading to theme text on light */}
+            <p class="text-lg text-theme-muted mt-4 max-w-2xl mx-auto"> {/* Paragraph to theme muted */}
+                We combine insightful strategies with expertise to deliver digital solutions that truly make a difference.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+            {reasons.map(reason => (
+                <div class="bg-theme-light p-6 rounded-lg shadow-md text-center value-card"> {/* Card bg to theme-light, add value-card hover */}
+                    <div class="inline-block p-4 bg-theme-primary/10 rounded-full mb-4"> {/* Icon circle bg to theme primary with opacity */}
+                        <Icon name={reason.iconName} class="w-8 h-8 text-theme-primary" /> {/* Icon color to theme primary */}
+                    </div>
+                    <h3 class="text-xl font-semibold text-theme-on-light mb-3">{reason.title}</h3> {/* Card heading to theme text on light */}
+                    <p class="text-theme-muted text-sm">{reason.description}</p> {/* Card paragraph to theme muted */}
+                </div>
+            ))}
+        </div>
+
+        <div class="mt-12 bg-[var(--clr-accent)]/20 rounded-xl p-8 md:p-12 flex flex-col lg:flex-row items-center text-center lg:text-left"> {/* Callout box bg to theme accent with opacity */}
+            <div class="lg:w-2/3 mb-6 lg:mb-0 lg:pr-10">
+                <h3 class="text-2xl md:text-3xl font-bold text-theme-on-light mb-3"> {/* Callout heading */}
+                    Ready to See Real Results?
+                </h3>
+                <p class="text-theme-muted text-lg">
+                     Join the many businesses that have transformed their digital presence with Clear3sixty. Let's build your success story together.
+                </p>
+            </div>
+            <div class="lg:w-1/3 lg:text-right">
+                <a 
+                    href="/contact" 
+                    class="btn-theme-primary inline-block font-bold py-4 px-10 text-lg transition shadow-lg transform hover:scale-105" /* Button to theme primary, adjust padding/text size as needed */
+                >
+                    Get Started Today
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,52 @@
+---
+// src/components/Socials.astro
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  // Tailwind CSS JIT compiler needs full class names.
+  // Pass the complete class string for icon size, e.g., "w-6 h-6" or "w-8 h-8"
+  iconSizeClass?: string;
+  // Pass the complete class string for icon colors and hover effects, e.g., "text-gray-400 hover:text-white"
+  iconColorClass?: string;
+  // Pass the complete class string for the container, e.g., "flex space-x-4"
+  containerClass?: string;
+}
+
+const {
+  iconSizeClass = "w-6 h-6", // Default icon size (24px)
+  iconColorClass = "text-gray-500 hover:text-blue-500", // Default colors from your original file
+  containerClass = "flex space-x-4" // Default container style from your original file
+} = Astro.props;
+
+const socialMediaLinks = [
+  {
+    href: "YOUR_FACEBOOK_URL_HERE",
+    ariaLabel: "Facebook",
+    iconName: "tabler:brand-facebook"
+  },
+  {
+    href: "YOUR_LINKEDIN_URL_HERE",
+    ariaLabel: "LinkedIn",
+    iconName: "tabler:brand-linkedin"
+  },
+  {
+    href: "YOUR_TIKTOK_URL_HERE",
+    ariaLabel: "TikTok",
+    iconName: "tabler:brand-tiktok"
+  },
+  {
+    href: "YOUR_GITHUB_URL_HERE",
+    ariaLabel: "GitHub",
+    iconName: "tabler:brand-github"
+  }
+  // Add more social links here if needed
+];
+---
+
+<div class={containerClass}>
+  {socialMediaLinks.map(link => (
+    <a href={link.href} aria-label={link.ariaLabel} class:list={[iconColorClass, "transition"]}>
+      <Icon name={link.iconName} class:list={[iconSizeClass]} />
+    </a>
+  ))}
+</div>
