@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
+import { prefixPath } from '../utils/pathUtils'; // Import prefixPath
 
 // Import your local images
 import heroAboutImage from '../assets/about-us.png'; // Update path if image is in a subfolder of assets
@@ -181,7 +182,7 @@ import storyTeamDiscussionImage from '../assets/hero.png'; // Update path
                     <p class="text-theme-muted">Join the many businesses that have transformed their digital presence with Clear3sixty.</p> {/* Paragraph to theme muted */}
                 </div>
                 <div class="md:w-1/3 text-center md:text-right">
-                    <a href="#contact" class="btn-theme-primary inline-block py-3 px-8 font-semibold transition duration-300">Get Started</a> {/* Button to theme primary */}
+                    <a href={prefixPath("/#contact")} class="btn-theme-primary inline-block py-3 px-8 font-semibold transition duration-300">Get Started</a> {/* Button to theme primary, prefixed */}
                 </div>
             </div>
         </div>
@@ -194,7 +195,7 @@ import storyTeamDiscussionImage from '../assets/hero.png'; // Update path
                 <h2 class="text-3xl md:text-4xl font-bold mb-6 text-theme-on-dark">Ready to Make Your Digital Dreams a Reality?</h2> {/* Heading color */}
                 <p class="text-lg text-theme-on-dark opacity-90 mb-8">We'd love to learn about your unique business and how we can help you achieve your online goals.</p> {/* Paragraph color */}
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="/contact" class="bg-theme-light text-theme-on-light py-3 px-6 rounded-lg font-medium hover:bg-white transition duration-300 inline-flex items-center justify-center"> {/* Button 1 styling */}
+                    <a href={prefixPath("/contact")} class="bg-theme-light text-theme-on-light py-3 px-6 rounded-lg font-medium hover:bg-white transition duration-300 inline-flex items-center justify-center"> {/* Button 1 styling, prefixed */}
                         <Icon name="tabler:calendar-event" class="w-5 h-5 mr-2" /> Schedule Consultation
                     </a>
                     <a href="mailto:hello@Clear3sixty.com" class="btn-theme-primary py-3 px-6 font-medium transition duration-300 inline-flex items-center justify-center"> {/* Button 2 to theme primary */}

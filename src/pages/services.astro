@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Icon } from 'astro-icon/components';
+import { prefixPath } from '../utils/pathUtils'; // Import prefixPath
 
 const services = [
     {
@@ -120,7 +121,7 @@ const services = [
                 Whether you need a new website, higher search rankings, a custom app, or a complete brand overhaul, Clear3sixty is here to help. Let's discuss your unique needs and how we can bring your digital vision to life.
             </p>
             <a 
-                href="/contact" 
+                href={prefixPath("/contact")}
                 class="inline-flex items-center justify-center px-10 py-4 bg-theme-accent text-theme-on-light font-bold rounded-full text-lg transition shadow-lg transform hover:scale-105 hover:brightness-90" 
             >
                 <Icon name="tabler:calendar-event" class="w-6 h-6 mr-2" /> Get a Free Consultation

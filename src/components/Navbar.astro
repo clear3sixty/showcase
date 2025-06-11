@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components'; // Import Icon from astro-icon
+import { prefixPath } from '../utils/pathUtils'; // Import prefixPath
 // Image component and defaultSiteLogo import removed
 
 export interface Props {
@@ -20,7 +21,7 @@ const navLinks = [
 ---
 <header class="fixed w-full bg-theme-light shadow-md z-50">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <a href="/" class="flex items-center space-x-2">
+        <a href={prefixPath("/")} class="flex items-center space-x-2">
             <Icon name="local:logo" class="h-8 w-auto" aria-label={logoAlt} /> {/* Use astro-icon for the logo */}
             <span class="text-2xl font-bold text-theme-primary">{brandName}</span>
         </a>
@@ -34,7 +35,7 @@ const navLinks = [
         <nav class="hidden md:flex space-x-10">
             {navLinks.map(link => (
                 <a 
-                  href={link.href} 
+                  href={prefixPath(link.href)}
                   class:list={[
                     "transition",
                     currentPage === link.id 
@@ -45,7 +46,7 @@ const navLinks = [
                   {link.label}
                 </a>
             ))}
-            <a href="/contact" class="btn-theme-secondary transition">Get Started</a>
+            <a href={prefixPath("/contact")} class="btn-theme-secondary transition">Get Started</a>
         </nav>
     </div>
     
@@ -54,7 +55,7 @@ const navLinks = [
         
         {navLinks.map(link => (
         <a 
-          href={link.href} 
+          href={prefixPath(link.href)}
           class:list={[
             "block py-2 transition",
             currentPage === link.id 
@@ -65,7 +66,7 @@ const navLinks = [
           {link.label}
         </a>
       ))}
-        <a href="/contact" class="btn-theme-primary block mt-2 text-center transition">Get Started</a>
+        <a href={prefixPath("/contact")} class="btn-theme-primary block mt-2 text-center transition">Get Started</a>
     </div>
 </header>
 

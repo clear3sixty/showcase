@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { prefixPath } from '../utils/pathUtils'; // Import prefixPath
 
 const reasons = [
     {
@@ -53,7 +54,7 @@ const reasons = [
             </div>
             <div class="lg:w-1/3 lg:text-right">
                 <a 
-                    href="/contact" 
+                    href={prefixPath("/contact")}
                     class="btn-theme-primary inline-block font-bold py-4 px-10 text-lg transition shadow-lg transform hover:scale-105" /* Button to theme primary, adjust padding/text size as needed */
                 >
                     Get Started Today

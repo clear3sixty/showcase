@@ -1,6 +1,7 @@
 ---
 // src/components/SolutionSection.astro
 import { Icon } from 'astro-icon/components';
+import { prefixPath } from '../utils/pathUtils'; // Import prefixPath
 
 const solutions = [
     {
@@ -48,7 +49,7 @@ const solutions = [
                         {solution.description}
                     </p>
                     <a 
-                        href={`/services#${solution.id}`} 
+                        href={prefixPath(`/services#${solution.id}`)}
                         class="inline-block mt-auto px-5 py-2 bg-theme-secondary/10 text-theme-secondary font-semibold text-sm rounded-lg hover:bg-theme-secondary/20 transition duration-150 ease-in-out group" 
                     >
                         Learn more <Icon name="tabler:arrow-right" class="inline-block w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-1 text-theme-secondary" /> {/* Arrow icon color */}

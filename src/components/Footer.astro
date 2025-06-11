@@ -2,6 +2,7 @@
 // Image component and defaultSiteLogo import removed
 import { Icon } from 'astro-icon/components'; // Import astro-icon
 import Socials from './Socials.astro'; // Import the Socials component
+import { prefixPath } from '../utils/pathUtils'; // Import prefixPath
 
  // Lucide imports removed, will use astro-icon
 
@@ -13,12 +14,27 @@ export interface Props {
 
 const { logoAlt = "Clear3sixty Logo", brandName = "Clear3sixty" } = Astro.props;
 
+const serviceLinks = [
+    { href: "/services#web-design", text: "Website Development" },
+    { href: "/services#seo", text: "Google Visibility & SEO" },
+    { href: "/services#branding", text: "Branding & Logo Design" },
+    { href: "/services#custom-apps", text: "Business Apps" },
+    { href: "/services", text: "Digital Marketing" }, // This service ID is not in services.astro, linking to services page for now
+];
+
+const companyLinks = [
+    { href: "/#about", text: "About Us" },
+    { href: "/#portfolio", text: "Portfolio" },
+    { href: "/#testimonials", text: "Testimonials" },
+    { href: "#", text: "Blog" }, // Stays as "#", not prefixed
+    { href: "/#contact", text: "Contact" },
+];
 ---
 <footer class="pt-16 pb-8 px-4 text-theme-on-dark hero-gradient"> {/* Use hero-gradient for background and theme text color */}
     <div class="container mx-auto">
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
             <div>
-                <a href="/" class="flex items-center space-x-2 mb-4">
+                <a href={prefixPath("/")} class="flex items-center space-x-2 mb-4">
                     <Icon name="local:logo" class="h-8 w-auto" /> {/* Use astro-icon for the logo */}
                     <span class="text-2xl font-bold text-theme-on-dark">{brandName}</span>
                 </a>
@@ -33,22 +49,18 @@ const { logoAlt = "Clear3sixty Logo", brandName = "Clear3sixty" } = Astro.props;
             <div>
                 <h4 class="text-lg font-bold mb-4 text-theme-on-dark">Services</h4>
                 <ul class="space-y-3">
-                    <li><a href="/services#web-design" class="text-theme-on-dark opacity-80 hover:opacity-100 hover:text-theme-secondary transition">Website Development</a></li>
-                    <li><a href="/services#seo" class="text-theme-on-dark opacity-80 hover:opacity-100 hover:text-theme-secondary transition">Google Visibility & SEO</a></li>
-                    <li><a href="/services#branding" class="text-theme-on-dark opacity-80 hover:opacity-100 hover:text-theme-secondary transition">Branding & Logo Design</a></li>
-                    <li><a href="/services#custom-apps" class="text-theme-on-dark opacity-80 hover:opacity-100 hover:text-theme-secondary transition">Business Apps</a></li>
-                    <li><a href="/services" class="text-theme-on-dark opacity-80 hover:opacity-100 hover:text-theme-secondary transition">Digital Marketing</a></li> {/* This service ID is not in services.astro, linking to services page for now */}
+                    {serviceLinks.map(link => (
+                        <li><a href={prefixPath(link.href)} class="text-theme-on-dark opacity-80 hover:opacity-100 hover:text-theme-secondary transition">{link.text}</a></li>
+                    ))}
                 </ul>
             </div>
             
             <div>
                 <h4 class="text-lg font-bold mb-4 text-theme-on-dark">Company</h4>
                 <ul class="space-y-3">
-                    <li><a href="/#about" class="text-theme-on-dark opacity-80 hover:opacity-100 hover:text-theme-secondary transition">About Us</a></li>
-                    <li><a href="/#portfolio" class="text-theme-on-dark opacity-80 hover:opacity-100 hover:text-theme-secondary transition">Portfolio</a></li>
-                    <li><a href="/#testimonials" class="text-theme-on-dark opacity-80 hover:opacity-100 hover:text-theme-secondary transition">Testimonials</a></li>
-                    <li><a href="#" class="text-theme-on-dark opacity-80 hover:opacity-100 hover:text-theme-secondary transition">Blog</a></li>
-                    <li><a href="/#contact" class="text-theme-on-dark opacity-80 hover:opacity-100 hover:text-theme-secondary transition">Contact</a></li>
+                    {companyLinks.map(link => (
+                        <li><a href={prefixPath(link.href)} class="text-theme-on-dark opacity-80 hover:opacity-100 hover:text-theme-secondary transition">{link.text}</a></li>
+                    ))}
                 </ul>
             </div>
             
@@ -56,7 +68,7 @@ const { logoAlt = "Clear3sixty Logo", brandName = "Clear3sixty" } = Astro.props;
                 <h4 class="text-lg font-bold mb-4 text-theme-on-dark">Contact Us</h4>
                 <ul class="space-y-3">
                     <li class="flex items-start">
-                        <Icon name="tabler:map-pin" class="mt-1 mr-3 text-theme-secondary hover:text-theme-accent w-7 h-7 flex-shrink-0" />
+                        <Icon name="tabler:map-pin" class="mt-1 mr-3 text-theme-secondary w-7 h-7 flex-shrink-0" /> {/* Removed hover:text-theme-accent as it's not interactive */}
                         <span class="text-theme-on-dark opacity-80">Kampala, Uganda</span>
                     </li>
                     <li class="flex items-center">
