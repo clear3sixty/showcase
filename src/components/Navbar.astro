@@ -5,7 +5,7 @@ import { Icon } from 'astro-icon/components'; // Import Icon from astro-icon
 export interface Props {
   currentPage?: string;
   // logoSrc prop removed
-  logoAlt?: string; // Kept for potential future use with aria-label, though not directly used on Icon
+  logoAlt?: string; // Accessible label for the logo icon
   brandName?: string;
 }
 const { currentPage, logoAlt = "Clear3sixty Logo", brandName = "Clear3sixty" } = Astro.props;
@@ -21,7 +21,7 @@ const navLinks = [
 <header class="fixed w-full bg-theme-light shadow-md z-50">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
         <a href="/" class="flex items-center space-x-2">
-            <Icon name="local:logo" class="h-8 w-auto" /> {/* Use astro-icon for the logo */}
+            <Icon name="local:logo" class="h-8 w-auto" aria-label={logoAlt} /> {/* Use astro-icon for the logo */}
             <span class="text-2xl font-bold text-theme-primary">{brandName}</span>
         </a>
         
